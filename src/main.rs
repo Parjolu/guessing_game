@@ -24,8 +24,20 @@ fn main() {
         println!("Ai ghicit: {guess}");
 
         match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Prea mic!"),
-            Ordering::Greater => println!("Prea mare!"),
+            Ordering::Less => {
+                if guess <= secret_number / 2 {
+                    println!("Mult prea mic!")
+                } else {
+                    println!("Prea mic bro")
+                }
+            }
+            Ordering::Greater => {
+                if guess >= secret_number * 3 / 2 {
+                    println!("Mult prea mare!");
+                } else {
+                    println!("Prea mare bro")
+                }
+            }
             Ordering::Equal => {
                 println!("Bravo ba!");
                 break;
